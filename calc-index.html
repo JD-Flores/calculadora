@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="calc-style.css">
+    </head>
+    <body>
+       <h1>JD's Calculator</h1>
+       <p id="display"></p>
+       <br>
+       <div class="container">
+        <div class="nums">
+            <button onclick="pressNumber('1')">1</button>
+            <button onclick="pressNumber('2')">2</button>
+            <button onclick="pressNumber('3')">3</button>
+            <br>
+            <button onclick="pressNumber('4')">4</button>
+            <button onclick="pressNumber('5')">5</button>
+            <button onclick="pressNumber('6')" >6</button>
+            <br>
+            <button onclick="pressNumber('7')">7</button>
+            <button onclick="pressNumber('8')">8</button>
+            <button onclick="pressNumber('9')">9</button>
+            <br>
+            <button id="zero" onclick="pressNumber('0')">0</button>
+           </div>
+           <div class="ops">
+            <button class="op" onclick="add()">+</button>
+            <br>
+            <button class="op"  onclick="subtract()">-</button>
+            <br>
+            <button class="op" onclick="multiply()">x</button>
+            <br>
+            <button class="op" onclick="divide()">/</button>
+            <button class="op" onclick="equals()">=</button>
+            <br>
+           </div>
+       </div>
+        <script src="calc.js"></script>
+    </body>
+</html>

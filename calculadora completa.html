@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+            background-color: #d4e6eb;
+            font-family: Bahnschrift;
+            }
+            h1{
+                text-align: center;
+                font-family: Tahoma;
+            }
+            #display {
+                background-color: #bbefff;
+                width: 300px;
+                height: 40px;
+                border: solid 2px;
+                border-radius: 5px;
+                padding: 5px;
+                margin:auto;
+                text-align: right;
+                line-height: 50px;
+                font-size: 20px;
+            }
+
+            /* BOTONES (general, solo afecta a los numeros) */
+
+            button {
+                background-color: rgb(250, 231, 149);
+                width: 60px;
+                height: 60px;
+                border-radius: 25px;
+                margin: 6px;
+                font-family: Bahnschrift;
+                font-size: 18px;
+            }
+            button:hover {
+                background-color: rgb(255, 243, 188);
+            }
+            button:active {
+                background-color: rgb(192, 178, 113);
+            }
+            #zero {
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+
+            /* BOTONES (operadores) */
+
+            .op {
+                background-color: rgb(253, 198, 135);
+                height: 46px;
+            }
+            .op:hover {
+                background-color: rgb(255, 206, 149);
+            }
+            .op:active {
+                background-color: rgb(189, 149, 104);
+            }
+
+            /* Posicion */
+
+            .container {
+                margin: auto;
+                width: 300px;
+            }
+            .nums {
+                float: left;
+            }
+            .ops {
+                width: 50px;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>JD's Calculator</h1>
+       <p id="display"></p>
+       <br>
+       <div class="container">
+        <div class="nums">
+            <button onclick="pressNumber('1')">1</button>
+            <button onclick="pressNumber('2')">2</button>
+            <button onclick="pressNumber('3')">3</button>
+            <br>
+            <button onclick="pressNumber('4')">4</button>
+            <button onclick="pressNumber('5')">5</button>
+            <button onclick="pressNumber('6')" >6</button>
+            <br>
+            <button onclick="pressNumber('7')">7</button>
+            <button onclick="pressNumber('8')">8</button>
+            <button onclick="pressNumber('9')">9</button>
+            <br>
+            <button id="zero" onclick="pressNumber('0')">0</button>
+           </div>
+           <div class="ops">
+            <button class="op" onclick="add()">+</button>
+            <br>
+            <button class="op"  onclick="subtract()">-</button>
+            <br>
+            <button class="op" onclick="multiply()">x</button>
+            <br>
+            <button class="op" onclick="divide()">/</button>
+            <button class="op" onclick="equals()">=</button>
+            <br>
+           </div>
+       </div>
+        <script>
+            display = document.getElementById("display");
+            var op = "";
+            function pressNumber(num) {
+                display.innerHTML = display.innerHTML + num;
+            }
+
+            function add() {
+                num1 = parseInt(display.innerHTML);
+                op = "+";
+                display.innerHTML = "";
+            }
+            function subtract() {
+                num1 = parseInt(display.innerHTML);
+                op = "-";
+                display.innerHTML = "";
+            }
+            function multiply() {
+                num1 = parseInt(display.innerHTML);
+                op = "x";
+                display.innerHTML = "";
+            }
+            function divide() {
+                num1 = parseInt(display.innerHTML);
+                op = "/";
+                display.innerHTML = "";
+            }
+            function equals() {
+                num2 = parseInt(display.innerHTML);
+                if (op === "+") {
+                    result = num1 + num2;
+                }
+                else if (op === "-") {
+                    result = num1 - num2;
+                }
+                else if (op === "x") {
+                    result = num1 * num2;
+                }
+                else if (op === "/") {
+                    result = num1 / num2;
+                }
+                else {
+                    result = "fokiu"
+                }
+                display.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
